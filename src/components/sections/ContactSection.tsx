@@ -81,7 +81,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-24 md:py-32 bg-muted/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
@@ -215,7 +215,7 @@ export function ContactSection() {
               </h3>
               <p className="text-muted-foreground">
                 Whether you have a project idea, a question, or just want to
-                connect — my inbox is always open.
+                connect, my inbox is always open.
               </p>
             </div>
 
@@ -258,8 +258,8 @@ export function ContactSection() {
             <Separator />
 
             <p className="text-sm text-muted-foreground">
-              Based in Kathmandu, Nepal &mdash; open to remote opportunities
-              worldwide.
+              Based in Lisbon, Portugal &mdash; open to both remote and on-site
+              opportunities. Let's build something amazing together!
             </p>
           </div>
         </div>

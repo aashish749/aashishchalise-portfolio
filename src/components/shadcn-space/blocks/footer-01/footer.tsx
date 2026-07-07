@@ -87,14 +87,6 @@ const Footer = () => {
                   >
                     <LinkedinIcon />
                   </a>
-                  <a
-                    href={siteConfig.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <TwitterIcon />
-                  </a>
                 </div>
               </div>
             </div>
@@ -178,7 +170,7 @@ const Footer = () => {
           <Separator orientation="horizontal" />
           <p className="text-sm font-normal text-muted-foreground text-center">
             &copy; {new Date().getFullYear()} {siteConfig.name}. Built with
-            Next.js, Tailwind CSS & shadcn/ui.
+            Next.js
           </p>
         </div>
       </div>

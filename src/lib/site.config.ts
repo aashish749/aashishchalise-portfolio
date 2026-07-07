@@ -1,15 +1,15 @@
 export const siteConfig = {
   // ─── Personal ───
   name: "Aashis Chalise",
-  role: "Full Stack Engineer",
+  role: "Full Stack Web Developer",
   headline: "I build performant, accessible web apps that delight users",
   email: "contact@aashis.dev",
   resumeUrl: "/resume.pdf",
 
   // ─── Social Links (swap later) ───
   github: "https://github.com/aashish749",
-  linkedin: "https://linkedin.com/in/demo",
-  twitter: "https://twitter.com/demo",
+  linkedin: "https://www.linkedin.com/in/aashis-chalise",
+  twitter: "https://twitter.com/",
 
   // ─── Navigation ───
   navLinks: [
@@ -55,39 +55,38 @@ export const siteConfig = {
         "A full-stack ecommerce platform built with PostgreSQL, Express, React, and Node.js featuring product management, shopping cart, and checkout functionality.",
       tech: ["PostgreSQL", "Express", "React", "Node.js"],
       image: "/project1.jpg",
-      live: "https://demo.com",
+      live: "https://gearshop.aashis.dev",
       source: "https://github.com/aashish749/project1",
     },
     {
-      title: "MERN Stack Ecommerce Site",
+      title: "MERN Stack Car Rental Site",
       description:
-        "A full-stack ecommerce platform built with MongoDB, Express, React, and Node.js featuring product management, shopping cart, and checkout functionality.",
-      tech: ["MongoDB", "Express", "React", "Node.js"],
-      image: "/project2.jpg",
-      live: "https://demo.com",
-      source: "https://github.com/aashish749/project2",
+        "A full-stack car rental platform with vehicle management, booking system, user authentication, and real-time availability checking.",
+      tech: ["React", "Node.js", "MongoDB", "Express"],
+      image: "/project3-letsdrive (1).jpg",
+      live: "https://letsdrive.com.np/",
+      source: "https://github.com/aashish749/project3",
     },
     {
-      title: "Hotel Booking Site",
+      title: "MERN Stack Clothing Store",
       description:
-        "A full-stack hotel booking platform with room management, booking system, user authentication, and real-time availability checking.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      image: "/project3.jpg",
-      live: "https://demo.com",
-      source: "https://github.com/aashish749/project3",
+        "A full-stack clothing store platform built with MongoDB, Express, React, and Node.js featuring product management, shopping cart, and checkout functionality.",
+      tech: ["MongoDB", "Express", "React", "Node.js"],
+      image: "/project2.jpg",
+      live: "https://forever-store.aashis.dev",
+      source: "https://github.com/aashish749/project2",
     },
   ],
 
   // ─── Terminal Commands ───
   terminalCommands: {
-    help: "Available commands: about, skills, projects, contact, social, clear",
+    help: "Available commands: about, skills, projects, contact, clear",
     about:
       "Hey! I'm Aashis, a full-stack engineer passionate about building performant, accessible web apps.",
     skills:
       "MERN • PERN • TypeScript • Tailwind • Drizzle • PostgreSQL • MongoDB",
     projects: "Check out the projects section below!",
-    contact: "📧 aashishcalise01@gmail.com 🔗 github.com/aashish749",
-    social: "GitHub: github.com/aashish749 | LinkedIn: linkedin.com/in/demo",
+    contact: "📧 contact@aashis.dev | 🔗 linkedin.com/in/aashis-chalise",
   },
 } as const;
 

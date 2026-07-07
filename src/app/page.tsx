@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Navbar from "@/components/shadcn-space/blocks/navbar-01/navbar";
 import Footer from "@/components/shadcn-space/blocks/footer-01/footer";
 import { Hero7 } from "@/components/hero7";
@@ -9,8 +10,20 @@ import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { TerminalSection } from "@/components/sections/TerminalSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import GridBackground from "@/components/GridBackground";
+import { SeparatorGrid } from "@/components/ui/extension/seperatorGrid";
 
 export default function HomePage() {
+  // Scroll to top on initial load (if no hash in URL)
+  useEffect(() => {
+    // Prevent browser scroll restoration from overriding our scroll position
+    if (typeof window !== "undefined") {
+      history.scrollRestoration = "manual";
+    }
+    if (window.location.hash === "" || window.location.hash === "#") {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -69,7 +82,7 @@ export default function HomePage() {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-104"
                         loading="lazy"
                       />
                     ) : (
@@ -115,7 +128,7 @@ export default function HomePage() {
         </section>
 
         {/* Skills / Technologies — Logo Cloud */}
-        <section id="skills" className="bg-muted/50 py-24 md:py-32">
+        <section id="skills" className="bg-muted/50 pt-24 pb-5 md:pt-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto mb-16 max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -130,7 +143,7 @@ export default function HomePage() {
         </section>
 
         {/* Contact */}
-        <section className="py-24 md:py-32">
+        <section className="">
           <ContactSection />
         </section>
       </main>

@@ -1,5 +1,8 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site.config";
+import { motion } from "framer-motion";
 
 type LogoCloudProps = React.ComponentProps<"div">;
 
@@ -39,7 +42,7 @@ const TECH_LOGOS: Record<string, string> = {
   Clerk: "/clerk-icon.png",
 };
 
-export function LogoCloud({ className, ...props }: LogoCloudProps) {
+export function LogoCloud({ className }: LogoCloudProps) {
   const allTech = [
     ...siteConfig.skills.languages,
     ...siteConfig.skills.frontend,
@@ -49,12 +52,14 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
   ];
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, staggerChildren: 0.02, delayChildren: 0.05 }}
       className={cn(
         "relative grid grid-cols-2 border-x border-border md:grid-cols-5",
         className,
       )}
-      {...props}
     >
       <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t border-border" />
 
@@ -65,8 +70,17 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
         const isDimLogo = ["Express.js", "Socket.io"].includes(tech);
 
         return (
-          <div
+          <motion.div
             key={tech}
+            initial={{ opacity: 0, y: 15, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 20,
+              delay: index * 0.01,
+            }}
+            whileHover={{ scale: 1.03 }}
             className={cn(
               "flex flex-col items-center justify-center gap-2 px-4 py-8 md:p-8",
               "border-border",
@@ -78,23 +92,32 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
             )}
           >
             {logoUrl ? (
-              <img
+              <motion.img
                 alt={tech}
                 className={cn(
-                  "pointer-events-none h-5 select-none md:h-6 dark:brightness-0 dark:invert",
+                  "pointer-events-none h-5 select-none md:h-6 dark:brightness-0 dark:invert transition-all duration-200",
                   isDimLogo && "dark:brightness-[1.5] dark:contrast-[1.2]",
                 )}
                 src={logoUrl}
+                whileHover={{
+                  rotate: [0, -3, 3, 0],
+                  transition: { duration: 0.2 },
+                }}
               />
             ) : null}
-            <span className="text-xs font-medium text-muted-foreground">
+            <motion.span
+              className="text-xs font-medium text-muted-foreground"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.01 }}
+            >
               {tech}
-            </span>
-          </div>
+            </motion.span>
+          </motion.div>
         );
       })}
 
       <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b border-border" />
-    </div>
+    </motion.div>
   );
 }
